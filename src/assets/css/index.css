@@ -135,6 +135,11 @@
     z-index: 1;
     padding: 9px;
     font-size: 16pt;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap; 
 }
 
 .rodape-inicio a {

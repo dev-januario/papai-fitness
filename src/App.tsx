@@ -1,10 +1,17 @@
-import React from "react";
+import { FC } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { PaginaInicial, PaginaExercicios } from "./pages";
 
-const App: React.FC = () => {
+const App: FC = () => {
     return (
-        <div>
-            <h1>Exemplo</h1>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<PaginaInicial />} />
+                <Route path="/home" element={<PaginaInicial />} />
+                <Route path="/exercicios" element={<PaginaExercicios />} />
+                <Route element={<PaginaInicial />} />
+            </Routes>
+        </Router>
     );
 };
 

@@ -1,38 +1,33 @@
 import React from "react";
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { darkTheme } from '../theme';
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: ${(props) => props.theme.background};
-    color: ${(props) => props.theme.text};
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-  h1 {
-    color: ${(props) => props.theme.text};
-  }
-`;
-
-const Button = styled.button`
-    background-color: ${(props) => props.theme.primary};
-    color: ${(props) => props.theme.text};
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    &:hover {
-      background-color: ${(props) => props.theme.secondary};
-    }
-`;
+import '../assets/css/index.css';
+import { useNavigate } from "react-router-dom";
 
 const PaginaInicial: React.FC = () => {
+    const navigate = useNavigate();
+
     return (
-        <ThemeProvider theme={darkTheme}>
-            <GlobalStyle />
-            <h1>Olá, Alysson!</h1>
-        </ThemeProvider>
+        <section className="area-geral">
+            <div className="area-treino-inicio">
+                <div className="titulo-inicio">
+                    <h1>INICIAR TREINO</h1>
+                    <hr />
+                    <p>Esse treino foi baseado em algumas aulas de Stretching For Beginners e Fat Burning Workout</p>
+                </div>
+                <div className="botao-inicio">
+                    <button
+                        onClick={ () => navigate('/exercicios') }
+                    >COMEÇAR</button>
+                </div>
+                <div className="aviso-inicio">
+                    <p>
+                        <strong>Observação: </strong>
+                        <br /><br />
+                        Antes de iniciar o treino, lembre-se que cada exercício de alongamento (Stretching) tem a duração de 30 segundos, enquanto os exercícios para queima de gordura (Fat Burning) duram 45 segundos. Além disso, haverá uma pausa de 1 minuto entre cada exercício para um descanso rápido.
+                    </p>
+                </div>
+            </div>
+            <footer className="rodape-inicio">Desenvolvido por <a href="https://github.com/dev-januario" target="_blank">Alysson Januário</a></footer>
+        </section>
     );
 };
 

@@ -137,9 +137,7 @@
     font-size: 16pt;
     text-align: center;
     width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    white-space: nowrap; 
+    height: calc(100vh - 94vh);
 }
 
 .rodape-inicio a {

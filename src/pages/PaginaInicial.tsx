@@ -26,7 +26,7 @@ const PaginaInicial: React.FC = () => {
                     </p>
                 </div>
             </div>
-            <footer className="rodape-inicio">Desenvolvido por <a href="https://github.com/dev-januario" target="_blank">Alysson Januário</a></footer>
+            <footer className="rodape-inicio">Desenvolvido por <a href="https://github.com/dev-januario" target="_blank" rel="noreferrer" >Alysson Januário</a></footer>
         </section>
     );
 };

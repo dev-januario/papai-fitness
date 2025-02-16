@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import '../assets/css/index.css';
 import { useNavigate } from "react-router-dom";
 
 const PaginaInicial: React.FC = () => {
     const navigate = useNavigate();
+    const [treinosRealizados, setTreinosRealizados] = useState<number>(0);
+
+    const iniciarTreino = () => {
+        const novoNumero = treinosRealizados + 1;
+        setTreinosRealizados(novoNumero);
+        localStorage.setItem('treinosRealizados', novoNumero.toString());
+        navigate('/exercicios');
+    };
 
     return (
         <section className="area-geral">
@@ -15,10 +23,10 @@ const PaginaInicial: React.FC = () => {
                 </div>
                 <div className="botao-inicio">
                     <button
-                        onClick={ () => navigate('/exercicios') }
+                        onClick={iniciarTreino}
                         className="botao-comecar"
-                    >COMEÇAR TREINO</button>
-                    <button className="botao-extra" onClick={ () => navigate('/not-found') }>Criar Treino</button>
+                    >Começar treino</button>
+                    <button className="botao-extra" onClick={ () => navigate('/not-found') }>Estatísticas</button>
                     <button className="botao-extra" onClick={ () => navigate('/not-found') }>Sugestões</button>
                 </div>
                 <div className="aviso-inicio">

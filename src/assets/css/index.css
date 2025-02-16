@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Ubuntu Mono", serif;
+    font-family: "Noto Serif", serif;
     color: #F0FFFF;
 }
 
 @media (max-width: 430px) and (max-height: 932px) {
+    /* Página inicial */
     .area-geral {
         position: relative;
         background-image: url('../image/fundo-tela-inicial.avif');
@@ -24,33 +25,7 @@
         align-items: center;
     }
     
-    .area-geral-exercicios {
-        position: relative;
-        background-image: url('../image/fundo-tela-exercicios.avif');
-        background-size: contain;
-        background-position: left;
-        background-repeat: no-repeat;
-        background-color: #000;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
     .area-geral::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 0;
-    }
-    
-    .area-geral-exercicios::before {
         content: '';
         position: absolute;
         top: 0;
@@ -111,16 +86,16 @@
         align-items: center;
         width: 100%;
         height: 50px;
+        border: 1px solid #859400;
         background-color: #e9ff1e;
         font-weight: 500;
         color: #000;
         border-radius: 30px;
         font-size: 30px;
-        margin-top: 4px;
+        margin-top: 6px;
     }
     
     .botao-inicio .botao-comecar:hover {
-        background-color: #b6ca00;
         transform: scale(1.1);
         cursor: pointer;
     }
@@ -131,16 +106,18 @@
         align-items: center;
         width: 100%;
         height: 50px;
-        background-color: #213cd354;
+        border: 1px solid #0026ff54;
+        background-color: #0013464d;
         font-weight: 500;
-        color: #F0FFFF;
+        color: #c4c4c4;
         border-radius: 30px;
         font-size: 25px;
-        margin-top: 4px;
+        margin-top: 6px;
     }
     
     .botao-inicio .botao-extra:hover {
         background-color: #1a30a8a1;
+        color: #F0FFFF;
         transform: scale(1.1);
         cursor: pointer;
     }
@@ -175,5 +152,93 @@
     
     .rodape-inicio a:hover {
         text-decoration: underline;
+    }
+
+    /* Página de exercícios */
+    .area-geral-exercicios {
+        position: relative;
+        background-image: url('../image/fundo-tela-exercicios.avif');
+        background-size: contain;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-color: #000;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .area-geral-exercicios::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 0;
+    }
+
+    .area-stretching, .area-fat-burning {
+        width: 100%;
+        padding: 5px 5px;
+        z-index: 1;
+        margin-bottom: 10px;
+    }
+
+    .area-titulo-exercicios {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-radius: 12px;
+        background-color: #2929ff;
+        padding: 2px 20px;
+    }
+
+    .area-titulo-exercicios button {
+        background-color: #2929ff;
+        border: none;
+    }
+
+    .lista-exercicios {
+        display: flex;
+        flex-direction: rows;
+    }
+
+    .lista-exercicios ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .lista-exercicios li {
+        display: flex;
+        width: 90%;
+        align-items: center;
+        padding: 5px;
+        margin-bottom: 3px;
+    }
+
+    .detalhes-exercicio {
+        display: flex;
+        align-items: start;
+    }
+
+    .image-video {
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /* Página de erro */
+    .botao-not-found:hover {
+        transform: scale(1.1);
     }
 }

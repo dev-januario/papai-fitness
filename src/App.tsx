@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { PaginaInicial, PaginaExercicios } from "./pages";
+import { PaginaInicial, PaginaExercicios, NotFound } from "./pages";
 
 const App: FC = () => {
     return (
@@ -9,7 +9,8 @@ const App: FC = () => {
                 <Route path="/" element={<PaginaInicial />} />
                 <Route path="/home" element={<PaginaInicial />} />
                 <Route path="/exercicios" element={<PaginaExercicios />} />
-                <Route element={<PaginaInicial />} />
+                <Route path="/not-found" element={<NotFound />} />
+                <Route element={<NotFound />} />
             </Routes>
         </Router>
     );

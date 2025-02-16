@@ -11,12 +11,15 @@ const PaginaInicial: React.FC = () => {
                 <div className="titulo-inicio">
                     <h1>INICIAR TREINO</h1>
                     <hr />
-                    <p>Esse treino foi baseado em algumas aulas de Stretching For Beginners e Fat Burning Workout</p>
+                    <p>Esse treino foi baseado em algumas aulas de Stretching For Beginners e Fat Burning Workout.</p>
                 </div>
                 <div className="botao-inicio">
                     <button
                         onClick={ () => navigate('/exercicios') }
-                    >COMEÇAR</button>
+                        className="botao-comecar"
+                    >COMEÇAR TREINO</button>
+                    <button className="botao-extra" onClick={ () => navigate('/not-found') }>Criar Treino</button>
+                    <button className="botao-extra" onClick={ () => navigate('/not-found') }>Sugestões</button>
                 </div>
                 <div className="aviso-inicio">
                     <p>

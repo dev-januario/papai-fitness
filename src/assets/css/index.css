@@ -158,26 +158,24 @@
     .area-geral-exercicios {
         position: relative;
         background-image: url('../image/fundo-tela-exercicios.avif');
-        background-size: contain;
-        background-position: left;
+        background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
         background-color: #000;
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-top: 20px;
     }
 
     .area-geral-exercicios::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.8);
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.932);
         z-index: 0;
     }
 
@@ -205,7 +203,8 @@
 
     .lista-exercicios {
         display: flex;
-        flex-direction: rows;
+        flex-direction: column;
+        width: 100%;
     }
 
     .lista-exercicios ul {
@@ -213,28 +212,122 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 100%;
+        align-items: center;
         padding: 0;
+        margin: 0;
+        width: 100%;
     }
 
     .lista-exercicios li {
         display: flex;
-        width: 90%;
         align-items: center;
-        padding: 5px;
-        margin-bottom: 3px;
+        width: 90%;
+        padding: 10px 10px 5px 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
     }
 
     .detalhes-exercicio {
         display: flex;
-        align-items: start;
+        align-items: center;
+        gap: 10px;
+        padding: 5px 0;
     }
-
+    
     .image-video {
         width: 50px;
         height: 50px;
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        flex-shrink: 0;
+    }
+    
+    .image-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .nome-descricao-exercicios {
+        flex: 1;
+        margin: 0;
+    }
+    
+    .nome-descricao-exercicios h3 {
+        font-size: 12pt;
+        margin: 0 0 2px 0;
+    }
+    
+    .nome-descricao-exercicios p {
+        font-size: 8pt;
+        margin: 0;
+    }
+
+    .cronometro-exercicios {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        padding: 0px 0px 2px 26px; 
+        margin-bottom: 10px;
+        border-top: 2px solid #83838352;
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .cronometro-exercicios button {
+        width: 52px;
+        background-color: transparent;
+        border: none;
+        color: #2396FE;
+    }
+
+    .full-screen-timer {
+        text-align: center;
+    }
+
+    .area-botao-conclusao-treino {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .botao-conclusao-treino:disabled {
+        width: 70%;
+        font-size: 15pt;
+        padding: 6px 0;
+        border: 1px solid gray;
+        background-color: gray;
+        border-radius: 20px;
+        font-weight: 600;
+        color: #F0FFFF;
+    }
+
+    .botao-conclusao-treino {
+        width: 70%;
+        font-size: 15pt;
+        padding: 6px 0;
+        border: 1px solid #00d100;
+        background-color: #00d100;
+        border-radius: 20px;
+        font-weight: 600;
+        color: #F0FFFF;
+    }
+
+    .botao-conclusao-treino:hover {
+        transform: scale(1.1);
     }
 
     /* Página de erro */

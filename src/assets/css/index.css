@@ -215,6 +215,76 @@
         margin-bottom: 10px;
     }
 
+    .video-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        z-index: 1000;
+    }
+    
+    .video-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    
+    .modal-cronometro {
+        background-color: white;
+        width: 80%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        text-align: center;
+    }
+
+    .modal-content h2 {
+        color: #000;
+    }
+    
+    .modal-content h1 {
+        font-size: 48px;
+        margin: 3px 0;
+        color: #000;
+    }
+    
+    .modal-content button {
+        width: 95%;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #E12A45;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .modal-content button:hover {
+        background-color: #E12A45;
+    }
+
     .area-titulo-exercicios {
         display: flex;
         justify-content: space-between;
@@ -319,13 +389,6 @@
         color: #2396FE;
     }
 
-    .cronometro-exercicios button:nth-last-child(1) {
-        width: 52px !important;
-        background-color: transparent;
-        border: none;
-        color: #E12A45;
-    }
-
     .full-screen-timer {
         text-align: center;
     }
@@ -344,11 +407,16 @@
         width: 70%;
         font-size: 15pt;
         padding: 6px 0;
-        border: 1px solid gray;
-        background-color: gray;
+        border: 1px solid #3838386b;
+        background-color: #8080806b;
         border-radius: 20px;
         font-weight: 600;
-        color: #F0FFFF;
+        color: #f0ffff50;
+    }
+
+    .botao-conclusao-treino:disabled:hover {
+        transform: none;
+        cursor: not-allowed;
     }
 
     .botao-conclusao-treino {

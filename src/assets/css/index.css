@@ -179,6 +179,35 @@
         z-index: 0;
     }
 
+    .area-aviso-exercicios {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px 20px;
+        z-index: 1;
+        background-color: yellow;
+        border-radius: 12px;
+    }
+
+    .aviso-exercicios {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .aviso-exercicios h3 {
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        color: red;
+    }
+
+    .aviso-exercicios p {
+        font-size: 11px;
+        color: #000;
+    }
+
     .area-stretching, .area-fat-burning {
         width: 100%;
         padding: 5px 5px;
@@ -288,6 +317,13 @@
         background-color: transparent;
         border: none;
         color: #2396FE;
+    }
+
+    .cronometro-exercicios button:nth-last-child(1) {
+        width: 52px !important;
+        background-color: transparent;
+        border: none;
+        color: #E12A45;
     }
 
     .full-screen-timer {

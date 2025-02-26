@@ -318,16 +318,32 @@ const PaginaExercicios: React.FC = () => {
         if (videoElement) {
             setPosterAtual(videoElement.getAttribute('poster'));
             videoElement.currentTime = 0;
-            videoElement.play();
+            videoElement.pause(); // Inicia pausado para o usuário controlar
+        }
+    };
+
+    const togglePlayPause = (e: React.MouseEvent<HTMLVideoElement>) => {
+        e.stopPropagation(); // Evita que o clique feche o vídeo
+        const videoElement = videoAberto.tipo === 'stretching' 
+            ? videoRefsStretching.current[videoAberto.id!] 
+            : videoRefsFatBurning.current[videoAberto.id!];
+        if (videoElement) {
+            if (videoElement.paused) {
+                videoElement.play();
+            } else {
+                videoElement.pause();
+            }
         }
     };
 
     const fecharVideo = () => {
-        const videoElement = videoAberto.tipo === 'stretching' ? videoRefsStretching.current[videoAberto.id!] : videoRefsFatBurning.current[videoAberto.id!];
+        const videoElement = videoAberto.tipo === 'stretching' 
+            ? videoRefsStretching.current[videoAberto.id!] 
+            : videoRefsFatBurning.current[videoAberto.id!];
         if (videoElement) {
             videoElement.pause();
             videoElement.currentTime = 0;
-            videoElement.setAttribute('poster', posterAtual || '');
+            videoElement.setAttribute('poster', posterAtual || ''); // Restaura o poster
         }
         setVideoAberto({ id: null, tipo: null });
     };
@@ -373,8 +389,7 @@ const PaginaExercicios: React.FC = () => {
                                                     muted
                                                     loop
                                                     style={{ objectFit: 'cover' }}
-                                                    onMouseDown={() => abrirVideo(id, 'stretching')}
-                                                    onTouchStart={() => abrirVideo(id, 'stretching')}
+                                                    onClick={() => abrirVideo(id, 'stretching')}
                                                 />
                                             </div>
                                             <div className="nome-descricao-exercicios">
@@ -417,8 +432,7 @@ const PaginaExercicios: React.FC = () => {
                                                     muted
                                                     loop
                                                     style={{ objectFit: 'cover' }}
-                                                    onMouseDown={() => abrirVideo(id, 'fatBurning')}
-                                                    onTouchStart={() => abrirVideo(id, 'fatBurning')}
+                                                    onClick={() => abrirVideo(id, 'fatBurning')}
                                                 />
                                             </div>
                                             <div className="nome-descricao-exercicios">
@@ -448,9 +462,13 @@ const PaginaExercicios: React.FC = () => {
                                     videoRefsFatBurning.current[videoAberto.id!] = el;
                                 }
                             }}
-                            src={videoAberto.tipo === 'stretching' ? exerciciosStretching[videoAberto.id! - 1].video : exerciciosFatBurning[videoAberto.id! - 1].video}
-                            autoPlay
+                            src={
+                                videoAberto.tipo === 'stretching' 
+                                    ? exerciciosStretching[videoAberto.id! - 1].video 
+                                    : exerciciosFatBurning[videoAberto.id! - 1].video
+                            }
                             style={{ width: '60%', height: '60%' }}
+                            onClick={togglePlayPause}
                         />
                     </div>
                 </div>

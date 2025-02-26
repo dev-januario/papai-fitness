@@ -17,112 +17,112 @@ const exerciciosStretching: Exercicio[] = [
         nome: "Lumbar Rotation Stretch (Right)",
         descricao: "Deite-se de costas, levante a perna direita em 90 graus e puxe-a com o braço esquerdo, segurando-a sobre a perna esquerda.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/lumbar-rotation-stretch-right.mp4"
     },
     {
         id: 2,
         nome: "Lumbar Rotation Stretch (Left)",
         descricao: "Deite-se de costas, levante a perna esquerda em 90 graus e puxe-a com o braço direito, segurando-a sobre a perna direita.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/lumbar-rotation-stretch-left.mp4"
     },
     {
         id: 3,
         nome: "Hamstring Stretch (Right)",
         descricao: "Deite-se de costas e levante a perna direita o máximo que conseguir, segurando-a com ambas as mãos.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/hamstring-stretch-right.mp4"
     },
     {
         id: 4,
         nome: "Hamstring Stretch (Left)",
         descricao: "Deite-se de costas e levante a perna esquerda o máximo que conseguir, segurando-a com ambas as mãos.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/hamstring-stretch-left.mp4"
     },
     {
         id: 5,
         nome: "Piriformis Stretch (Right)",
         descricao: "Deite-se de costas, levante a perna esquerda em 90 graus e cruze a perna direita sobre ela.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/piriformis-stretch-right.mp4"
     },
     {
         id: 6,
         nome: "Piriformis Stretch (Left)",
         descricao: "Deite-se de costas, levante a perna direita em 90 graus e cruze a perna esquerda sobre ela.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/piriformis-stretch-left.mp4"
     },
     {
         id: 7,
         nome: "Tall Kneeling Hip Flexor Stretch (Right)",
         descricao: "Ajoelhe-se, faça um ângulo de 90 graus com a perna esquerda para frente e estique a direita para trás.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/tall-kneeling-hip-flexor-stretch-right.mp4"
     },
     {
         id: 8,
         nome: "Knelling Hamstring Stretch (Left)",
         descricao: "Ajoelhe-se, estique a perna esquerda para frente e chegue perto de sentar sobre o pé direito.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/kneeling-hamstring-stretch-left.mp4"
     },
     {
         id: 9,
         nome: "Tall Kneeling Hip Flexor Stretch (Left)",
         descricao: "Ajoelhe-se, faça um ângulo de 90 graus com a perna direita para frente e estique a esquerda para trás.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/tall-kneeling-hip-flexor-stretch-left.mp4"
     },
     {
         id: 10,
         nome: "Kneeling Hamstring Stretch (Right)",
         descricao: "Ajoelhe-se, estique a perna direita para frente e chegue perto de sentar sobre o pé esquerdo.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/kneeling-hamstring-stretch-right.mp4"
     },
     {
         id: 11,
         nome: "Seated Spine Rotation Stretch (Right)",
         descricao: "Sente-se, estique a perna direita e cruze a esquerda sobre ela, apoiando o braço esquerdo atrás e o cotovelo direito no joelho esquerdo.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/seated-spine-rotation-stretch-right.mp4"
     },
     {
         id: 12,
         nome: "Seated Spine Rotation Stretch (Left)",
         descricao: "Sente-se, estique a perna esquerda e cruze a direita sobre ela, apoiando o braço direito atrás e o cotovelo esquerdo no joelho direito.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/seated-spine-rotation-stretch-left.mp4"
     },
     {
         id: 13,
         nome: "Chilld's Pose Stretch",
         descricao: "Ajoelhe-se, sente-se sobre os pés e estique os braços à frente.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/childs-pose-stretch.mp4"
     },
     {
         id: 14,
         nome: "Upper Back Extension",
         descricao: "Sente-se com as costas retas, coloque as mãos na cabeça e curve-se para frente, depois retorne à posição ereta com os braços abertos.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/upper-back-extension.mp4"
     },
     {
         id: 15,
         nome: "Upper Trap Stretch (Right)",
         descricao: "Sente-se com as costas retas e puxe o pescoço para a esquerda.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/upper-trap-stretch-right.mp4"
     },
     {
         id: 16,
         nome: "Upper Trap Stretch (Left)",
         descricao: "Sente-se com as costas retas e puxe o pescoço para a direita.",
         imagem: "/assets/image/stretching.png",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/stretching/upper-trap-stretch-left.mp4"
     },
 ];
 
@@ -132,84 +132,84 @@ const exerciciosFatBurning: Exercicio[] = [
         nome: "Butt Kicks",
         descricao: "Em pé, jogue os braços para trás e pule, batendo os calcanhares nas mãos.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/butt-kicks.mp4"
     },
     {
         id: 2,
         nome: "Burpees",
         descricao: "Apoie-se nos braços, faça uma flexão e, em seguida, pule levantando os joelhos.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/burpees.mp4"
     },
     {
         id: 3,
         nome: "Jumping Jacks",
         descricao: "Em pé, pule abrindo as pernas e batendo as mãos acima da cabeça, fechando as pernas ao abaixar os braços.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/jumping-jacks.mp4"
     },
     {
         id: 4,
         nome: "Switching Lunges",
         descricao: "Em pé, coloque o joelho esquerdo à frente e o direito para trás, intercalando pulos e agachamentos.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/switching-lunges.mp4"
     },
     {
         id: 5,
         nome: "Squat Taps",
         descricao: "Em pé, feche as pernas e abra ao tocar a mão esquerda no chão, alternando as mãos.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/squat-taps.mp4"
     },
     {
         id: 6,
         nome: "Switching Mountain Climbers",
         descricao: "Apoie-se nos braços e chute o ar alternando os joelhos.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/switching-mountain-climbers.mp4"
     },
     {
         id: 7,
         nome: "Shoulder to Shoulder",
         descricao: "Apoie-se nos braços e toque alternadamente os ombros, dorso, cintura, joelhos e pés.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/shoulder-to-shoulder.mp4"
     },
     {
         id: 8,
         nome: "Seated In & Outs",
         descricao: "Sentado, com as mãos atrás da cintura, estique as pernas e traga as pernas ao peito, voltando a esticar.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/seated-in-&-outs.mp4"
     },
     {
         id: 9,
         nome: "Seated Leg Flutters",
         descricao: "Sentado, com as mãos atrás da cintura, estique as pernas e intercale-as, levantando uma de cada vez.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/seated-leg-flutter.mp4"
     },
     {
         id: 10,
         nome: "Bicycles",
         descricao: "Deite-se de costas, coloque as mãos na cabeça e toque o cotovelo direito no joelho esquerdo e vice-versa.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/bicycles.mp4"
     },
     {
         id: 11,
-        nome: "Full Pank Position",
+        nome: "Full Plank Position",
         descricao: "Apoie-se nos antebraços e pés, mantenha o corpo reto e apoiado.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/full-plank-position.mp4"
     },
     {
         id: 12,
         nome: "Full Push-Up Position",
         descricao: "Fique em prancha alta, abaixe o peito em direção ao chão e empurre de volta à posição inicial.",
         imagem: "/assets/image/fat-burning.jpg",
-        video: "/assets/video/video-exemplo.mp4"
+        video: "/assets/video/fat-burning/full-push-up-position.mp4"
     }
 ];
 

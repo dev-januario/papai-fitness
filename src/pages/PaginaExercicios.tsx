@@ -218,8 +218,8 @@ const PaginaExercicios: React.FC = () => {
     const [cronometroAtivoFatBurning, setCronometroAtivoFatBurning] = useState<number | null>(null);
     const [fimDoTempoStretching, setFimDoTempoStretching] = useState(30);
     const [fimDoTempoFatBurning, setFimDoTempoFatBurning] = useState(45);
-    const [exercicioConcluidoStretching] = useState<{ [key: number]: boolean }>({});
-    const [exercicioConcluidoFatBurning] = useState<{ [key: number]: boolean }>({});
+    const [exercicioConcluidoStretching, setExercicioConcluidoStretching] = useState<{ [key: number]: boolean }>({});
+    const [exercicioConcluidoFatBurning, setExercicioConcluidoFatBurning] = useState<{ [key: number]: boolean }>({});
     const [exibirStretching, setExibirStretching] = useState(true);
     const [exibirFatBurning, setExibirFatBurning] = useState(true);
     const audioRef = useRef<HTMLAudioElement>(new Audio('/assets/audio/despertador.mp3'));
@@ -234,6 +234,20 @@ const PaginaExercicios: React.FC = () => {
     const [modalCronometroVisible, setModalCronometroVisible] = useState(false);
     const [tempoModal, setTempoModal] = useState(0);
     const [modalPosition, setModalPosition] = useState<{ x: number; y: number } | null>(null);
+
+    const toggleExercicioStretching = (id: number) => {
+        setExercicioConcluidoStretching(prev => ({
+            ...prev,
+            [id]: !prev[id]
+        }));
+    };
+
+    const toggleExercicioFatBurning = (id: number) => {
+        setExercicioConcluidoFatBurning(prev => ({
+            ...prev,
+            [id]: !prev[id]
+        }));
+    };
 
     const dispararCronometroStretching = (id: number, button: HTMLButtonElement) => {
         setCronometroAtivoStretching(id);
@@ -253,6 +267,7 @@ const PaginaExercicios: React.FC = () => {
             if (count === 0) {
                 clearInterval(timerRef.current!);
                 audioRef.current?.play();
+                toggleExercicioStretching(id);
     
                 setTimeout(() => {
                     audioRef.current?.pause();
@@ -285,6 +300,7 @@ const PaginaExercicios: React.FC = () => {
             if (count === 0) {
                 clearInterval(timerRef.current!);
                 audioRef.current?.play();
+                toggleExercicioFatBurning(id);
     
                 setTimeout(() => {
                     audioRef.current?.pause();
@@ -314,11 +330,16 @@ const PaginaExercicios: React.FC = () => {
 
     const abrirVideo = (id: number, tipo: 'stretching' | 'fatBurning') => {
         setVideoAberto({ id, tipo });
-        const videoElement = tipo === 'stretching' ? videoRefsStretching.current[id] : videoRefsFatBurning.current[id];
+        const videoElement = tipo === 'stretching' 
+            ? videoRefsStretching.current[id] 
+            : videoRefsFatBurning.current[id];
+        
         if (videoElement) {
-            setPosterAtual(videoElement.getAttribute('poster'));
+            const poster = videoElement.getAttribute('poster');
+            setPosterAtual(poster);
+            videoElement.setAttribute('data-poster', poster || '');
             videoElement.currentTime = 0;
-            videoElement.pause(); // Inicia pausado para o usuário controlar
+            videoElement.pause();
         }
     };
 
@@ -340,11 +361,15 @@ const PaginaExercicios: React.FC = () => {
         const videoElement = videoAberto.tipo === 'stretching' 
             ? videoRefsStretching.current[videoAberto.id!] 
             : videoRefsFatBurning.current[videoAberto.id!];
+        
         if (videoElement) {
             videoElement.pause();
             videoElement.currentTime = 0;
-            videoElement.setAttribute('poster', posterAtual || ''); // Restaura o poster
+            const posterOriginal = videoElement.getAttribute('data-poster') || posterAtual;
+            videoElement.removeAttribute('poster');
+            videoElement.setAttribute('poster', posterOriginal || '');
         }
+        
         setVideoAberto({ id: null, tipo: null });
     };
 
@@ -378,7 +403,12 @@ const PaginaExercicios: React.FC = () => {
                                 <ul key={id} >
                                     <li>
                                         <div>
-                                            <input type="checkbox" checked={exercicioConcluidoStretching[id] || false} readOnly style={{ accentColor: '#1BC250' }} />
+                                            <input 
+                                                type="checkbox" 
+                                                checked={exercicioConcluidoStretching[id] || false}
+                                                onChange={() => toggleExercicioStretching(id)}
+                                                style={{ accentColor: '#1BC250' }}
+                                            />
                                         </div>
                                         <div className="detalhes-exercicio">
                                             <div className="image-video">
@@ -386,6 +416,7 @@ const PaginaExercicios: React.FC = () => {
                                                     ref={(el) => (videoRefsStretching.current[id] = el)}
                                                     src={video}
                                                     poster={imagem}
+                                                    data-poster={imagem}
                                                     muted
                                                     loop
                                                     style={{ objectFit: 'cover' }}
@@ -400,7 +431,12 @@ const PaginaExercicios: React.FC = () => {
                                         
                                     </li>
                                     <div className="cronometro-exercicios">
-                                        <button onClick={(e) => dispararCronometroStretching(id, e.currentTarget)}>Iniciar</button>
+                                        <button 
+                                            onClick={(e) => dispararCronometroStretching(id, e.currentTarget)}
+                                            disabled={cronometroAtivoStretching === id}
+                                        >
+                                            {cronometroAtivoStretching === id ? fimDoTempoStretching : 'Iniciar'}
+                                        </button>
                                     </div>
                                 </ul>
                             ))}
@@ -421,7 +457,12 @@ const PaginaExercicios: React.FC = () => {
                                 <ul key={id} >
                                     <li>
                                         <div>
-                                            <input type="checkbox" checked={exercicioConcluidoFatBurning[id] || false} readOnly style={{ accentColor: '#1BC250' }} />
+                                            <input 
+                                                type="checkbox" 
+                                                checked={exercicioConcluidoFatBurning[id] || false}
+                                                onChange={() => toggleExercicioFatBurning(id)}
+                                                style={{ accentColor: '#1BC250' }}
+                                            />
                                         </div>
                                         <div className="detalhes-exercicio">
                                             <div className="image-video">
@@ -429,6 +470,7 @@ const PaginaExercicios: React.FC = () => {
                                                     ref={(el) => (videoRefsFatBurning.current[id] = el)}
                                                     src={video}
                                                     poster={imagem}
+                                                    data-poster={imagem}
                                                     muted
                                                     loop
                                                     style={{ objectFit: 'cover' }}
@@ -442,7 +484,12 @@ const PaginaExercicios: React.FC = () => {
                                         </div>
                                     </li>
                                     <div className="cronometro-exercicios">
-                                        <button onClick={(e) => dispararCronometroFatBurning(id, e.currentTarget)}>Iniciar</button>
+                                        <button 
+                                            onClick={(e) => dispararCronometroFatBurning(id, e.currentTarget)}
+                                            disabled={cronometroAtivoFatBurning === id}
+                                        >
+                                            {cronometroAtivoFatBurning === id ? fimDoTempoFatBurning : 'Iniciar'}
+                                        </button>
                                     </div>
                                 </ul>
                             ))}
@@ -467,7 +514,7 @@ const PaginaExercicios: React.FC = () => {
                                     ? exerciciosStretching[videoAberto.id! - 1].video 
                                     : exerciciosFatBurning[videoAberto.id! - 1].video
                             }
-                            style={{ width: '60%', height: '60%' }}
+                            style={{ width: '95%', height: '100%' }}
                             onClick={togglePlayPause}
                         />
                     </div>
@@ -483,7 +530,12 @@ const PaginaExercicios: React.FC = () => {
                     variants={modalVariants}
                     transition={{ duration: 0.5 }}
                 >
-                    <motion.div className="modal-cronometro" >
+                    <motion.div 
+                        className="modal-cronometro"
+                        style={modalPosition ? {
+                            position: 'absolute',
+                        } : undefined}
+                    >
                         <div className="modal-content">
                             <h2>Cronômetro</h2>
                             <h1>{tempoModal}</h1>

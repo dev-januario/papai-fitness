@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useNavigate } from "react-router-dom";
 import '../assets/css/index.css';
 
 interface Exercicio {
@@ -234,6 +235,8 @@ const PaginaExercicios: React.FC = () => {
     const [modalCronometroVisible, setModalCronometroVisible] = useState(false);
     const [tempoModal, setTempoModal] = useState(0);
     const [modalPosition, setModalPosition] = useState<{ x: number; y: number } | null>(null);
+
+    const navigate = useNavigate();
 
     const toggleExercicioStretching = (id: number) => {
         setExercicioConcluidoStretching(prev => ({
@@ -548,6 +551,7 @@ const PaginaExercicios: React.FC = () => {
             <section className="area-botao-conclusao-treino">
                 <button 
                     className="botao-conclusao-treino" 
+                    onClick={() => navigate('/final')}
                     disabled={!todosExerciciosConcluidos()}
                 >
                     Encerrar treino
